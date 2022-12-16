@@ -1,41 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - entry point
  *
- * Return: void
+ * Return: Always 0
  */
 
 int main(void)
 {
-	int p = 100;
 	int i;
 
-	i = 1;
-	while (i <= p)
+	char f[] = "Fizz";
+	char b[] = "Buzz";
+	char fb[] = "FizzBuzz";
+
+	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-		{
-			printf("FizzBuzz ");
-		}
+		if (i == 100)
+			printf("%s", b);
+		else if ((i % 3 == 0) && (i % 5 == 0))
+			printf("%s ", fb);
 		else if (i % 3 == 0)
-		{
-			printf("Fizz ");
-		}
+			printf("%s ", f);
 		else if (i % 5 == 0)
-		{
-			if (i < p)
-				printf("Buzz ");
-			else
-				printf("Buzz ");
-		}
-
+			printf("%s ", b);
 		else
-			printf("%i ", i);
+			printf("%d ", i);
 	}
-	i++;
-
-}
-printf("\n");
-return (0);
+	printf("\n");
+	return (0);
 }
