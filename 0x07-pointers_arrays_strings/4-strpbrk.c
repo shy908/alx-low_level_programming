@@ -2,30 +2,28 @@
 #include <stdio>
 
 /**
- * _strpbrk - prints the consecutive characters of s1 that are in s2.
- * @s: source string
- * @accept: searching string
+ * _strpbrk - searches a string for any of a set of bytes.
+ * @s: pointer that contains the address of the string to
+ * be evaluated
+ * @accept: pointer that contains the string to be evaluated s
  *
- * Return: new string.
+ * Return: address of the first occurence of accept in the string
  */
 
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j;
+	int i;
 
-	for (i = 0; *(s + i); i++)
+	while (*s != 0)
 	{
-		for (j = 0; *(accept + j); j++)
+		for (i = 0; accept[i] != 0; i++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (*s == accept[i])
 			{
-				break;
+				return (s);
 			}
 		}
-		if (*(accept + j) != '\0')
-		{
-			return (s + i);
-		}
+		s++;
 	}
 	return (0);
 }
