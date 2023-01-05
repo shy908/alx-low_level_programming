@@ -11,16 +11,18 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, n;
-	int total1 = 0, total2 = 0;
+	int counter1, counter2, sum1, sum2;
 
-	for (i = 0; i <= (size * size); i = i + size + 1)
+	sum1 = 0;
+	sum2 = 0;
+
+	for (counter1 = 0; counter1 < size; counter1++)
 	{
-		total1 = total1 + a[i];
+		sum1 += a[(size + 1) * counter1];
 	}
-	for (n = size - 1; n <= (size * size) - size; n = n + size - 1)
+	for (counter2 = 0; counter2 < size * size; counter2++)
 	{
-		total2 = total2 + a[j];
+		sum2 += a[(size - 1) * (counter2 + 1)];
 	}
-	printf("%d, %d\n", total1, total2);
+	printf("%d, %d\n", sum1, sum2);
 }
