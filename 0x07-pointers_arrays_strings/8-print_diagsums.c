@@ -10,18 +10,15 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int counter1, counter2, sum1, sum2;
-
-	sum1 = 0;
-	sum2 = 0;
-
-	for (counter1 = 0; counter1 < size; counter1++)
+	int index, sum1 = 0, sum2 = 0;
+	
+	for (index = 0; index < size; index++)
 	{
-		sum1 += a[(size + 1) * counter1];
+		sum1 += a[index]; a -= size;
 	}
-	for (counter2 = 0; counter2 < size * size; counter2++)
+	for (index = 0; index < size; index++)
 	{
-		sum2 += a[(size - 1) * (counter2 + 1)];
+		sum2 += a[index]; a -= size;
 	}
 	printf("%d, %d\n", sum1, sum2);
 }
