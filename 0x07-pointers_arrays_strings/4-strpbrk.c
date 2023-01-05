@@ -12,15 +12,22 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int counter;
+	int a = 0, b;
 
-	for (; *s != '\0'; s++)
+	while (s[a])
 	{
-		for (counter = 0; accept[counter] != '\0'; counter++)
+		b = 0;
+
+		while (accepted[b])
 		{
-			if (*s == accept[counter])
+			if (s[a] == accepted[b])
+			{
+				s += a;
 				return (s);
+			}
+			b++;
 		}
+		a++;
 	}
-	return (0);
+	return ('\0');
 }
